@@ -19,4 +19,4 @@ TODO
   - Add the comment type select widget form.
   - Add the comment tabbed view.
   - Theme the image layout on the view page.
-  - Add the "active ideas" block
+  - Add the "active ideas" block.
