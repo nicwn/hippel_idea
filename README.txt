@@ -3,7 +3,7 @@ Open Hippel (OH) open innovation platform.
 - Wireframes for the idea node/add page can be found at
   http://www.sireneast.com/vault/openhippel/draft_wireframes_v1.01/Create_Product_Idea.html.
 - Wireframes for the idea node page can be found at
-  http://www.sireneast.com/vault/openhippel/draft_wireframes_v1.01/Product_Detail.html
+  http://www.sireneast.com/vault/openhippel/draft_wireframes_v1.01/Product_Detail.html.
 
 TODO
 * Idea node/add page
