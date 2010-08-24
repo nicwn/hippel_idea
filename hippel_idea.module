@@ -1,0 +1,4 @@
+<?php
+
+include_once('hippel_idea.features.inc');
+include_once('hippel_idea.form.inc');
