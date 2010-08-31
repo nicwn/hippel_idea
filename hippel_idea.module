@@ -2,3 +2,5 @@
 
 include_once('hippel_idea.features.inc');
 include_once('hippel_idea.form.inc');
+include_once('hippel_idea.vud.inc');
+include_once('hippel_idea.block.inc');

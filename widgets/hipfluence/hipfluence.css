@@ -1,0 +1,24 @@
+/* $Id$ */
+
+#block-hippel_idea-hippel-idea-vote .vud-widget-hipfluence a {
+  float: left;
+  width: 120px;
+  height: 20px;
+  padding:10px 10px;
+  border: 1px solid #eee;
+  color:#fff;
+  font-weight:normal;
+  font-size: 14px;
+  background:#f86600;
+  text-decoration: none;
+  text-align: center;
+  }
+
+#block-hippel_idea-hippel-idea-vote .vud-widget-hipfluence a:active {
+  background: #333;
+  }
+
+#block-hippel_idea-hippel-idea-vote .vud-widget-hipfluence a.ctools-ajaxing {
+    padding-right:10px !important;
+    background-image:none;
+  }
