@@ -10,7 +10,7 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
         'cache' => BLOCK_NO_CACHE,
         'weight' => -100,
         'status' => 1,
-        'region' => 'sidebar',
+        'region' => 'right',
       );
       $blocks['hippel-idea-vote-result'] = array(
         'info' => t('Idea vote results'),
@@ -24,7 +24,7 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
         'cache' => BLOCK_NO_CACHE,
         'weight' => -90,
         'status' => 1,
-        'region' => 'sidebar',
+        'region' => 'right',
       );
       return $blocks;
       break;
