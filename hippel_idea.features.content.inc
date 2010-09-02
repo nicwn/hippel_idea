@@ -11,9 +11,10 @@ function hippel_idea_content_default_fields() {
     'field_name' => 'field_idea_description',
     'type_name' => 'idea',
     'display_settings' => array(
+      'weight' => '-1',
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -23,6 +24,10 @@ function hippel_idea_content_default_fields() {
         'format' => 'default',
         'exclude' => 0,
       ),
+      'format' => 'default',
+      'css-class' => array(),
+      'region' => 'disabled',
+      'ds_weight' => '-45',
       '4' => array(
         'format' => 'default',
         'exclude' => 0,
@@ -65,18 +70,23 @@ function hippel_idea_content_default_fields() {
     'field_name' => 'field_idea_image',
     'type_name' => 'idea',
     'display_settings' => array(
+      'weight' => '-3',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hippel-idea-thumbnail_linked',
+        'exclude' => 1,
       ),
       'full' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hippel-idea-medium_default',
+        'exclude' => 1,
       ),
+      'format' => 'default',
+      'css-class' => array(),
+      'region' => 'disabled',
+      'ds_weight' => '-19',
       '4' => array(
         'format' => 'image_plain',
         'exclude' => 0,
@@ -106,7 +116,7 @@ function hippel_idea_content_default_fields() {
       'alt' => '',
       'custom_alt' => 0,
       'title' => '',
-      'custom_title' => 0,
+      'custom_title' => 1,
       'title_type' => 'textfield',
       'default_image' => NULL,
       'use_default_image' => 0,
@@ -123,9 +133,10 @@ function hippel_idea_content_default_fields() {
     'field_name' => 'field_idea_tag',
     'type_name' => 'idea',
     'display_settings' => array(
+      'weight' => 0,
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -135,6 +146,10 @@ function hippel_idea_content_default_fields() {
         'format' => 'default',
         'exclude' => 0,
       ),
+      'format' => 'default',
+      'css-class' => array(),
+      'region' => 'disabled',
+      'ds_weight' => '-44',
       '4' => array(
         'format' => 'default',
         'exclude' => 0,

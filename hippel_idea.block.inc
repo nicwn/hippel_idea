@@ -30,7 +30,7 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
       break;
 
     case 'view':
-      if (($node = menu_get_object()) && ($node->type == 'idea')) {
+      if (($node = menu_get_object()) && ($node->type == 'idea') && (arg(2) != 'edit')) {
         $nid = $node->nid;
         if (($delta == 'hippel-idea-vote') && ($can_edit=user_access('use vote up/down on nodes'))) {
           return array(

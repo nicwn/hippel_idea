@@ -1,6 +1,16 @@
 <?php
 
 include_once('hippel_idea.features.inc');
-include_once('hippel_idea.form.inc');
+
+/**
+ * Include the Hippel Idea Vote Up/Down widget.
+ */
 include_once('hippel_idea.vud.inc');
+
+/**
+ * Include the hooks.
+ * 
+ * TODO: Move these into the module when development stabilizes.
+ */
 include_once('hippel_idea.block.inc');
+include_once('hippel_idea.form.inc');

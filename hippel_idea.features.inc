@@ -11,6 +11,43 @@ function hippel_idea_ctools_plugin_api() {
 }
 
 /**
+ * Implementation of hook_imagecache_default_presets().
+ */
+function hippel_idea_imagecache_default_presets() {
+  $items = array(
+    'hippel-idea-medium' => array(
+      'presetname' => 'hippel-idea-medium',
+      'actions' => array(
+        '0' => array(
+          'weight' => '0',
+          'module' => 'imagecache',
+          'action' => 'imagecache_scale_and_crop',
+          'data' => array(
+            'width' => '460',
+            'height' => '335',
+          ),
+        ),
+      ),
+    ),
+    'hippel-idea-thumbnail' => array(
+      'presetname' => 'hippel-idea-thumbnail',
+      'actions' => array(
+        '0' => array(
+          'weight' => '0',
+          'module' => 'imagecache',
+          'action' => 'imagecache_scale_and_crop',
+          'data' => array(
+            'width' => '120',
+            'height' => '80',
+          ),
+        ),
+      ),
+    ),
+  );
+  return $items;
+}
+
+/**
  * Implementation of hook_node_info().
  */
 function hippel_idea_node_info() {
@@ -28,4 +65,13 @@ function hippel_idea_node_info() {
     ),
   );
   return $items;
+}
+
+/**
+ * Implementation of hook_views_api().
+ */
+function hippel_idea_views_api() {
+  return array(
+    'api' => '2',
+  );
 }
