@@ -7,4 +7,4 @@
  * Plain widget votes display for Vote Up/Down
  */
 ?>
-<span id="<?php print $id; ?>" class="total-votes-plain"><span class="<?php print $class; ?> total"><?php print $unsigned_points; ?> <?php print $vote_label; ?></span></span>
+<span id="<?php print $id; ?>" class="total-votes-plain"><div class="bar"><div class="foreground" style="width:<?php print ($unsigned_points*0.6); ?>%"><span class="<?php print $class; ?> total"><?php print $unsigned_points; ?> <?php print $vote_label; ?></span></div></div></span>

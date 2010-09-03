@@ -24,7 +24,7 @@ function hippel_idea_imagecache_default_presets() {
           'action' => 'imagecache_scale_and_crop',
           'data' => array(
             'width' => '460',
-            'height' => '335',
+            'height' => '356',
           ),
         ),
       ),
