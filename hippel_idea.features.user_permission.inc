@@ -6,44 +6,44 @@
 function hippel_idea_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: access content
-  $permissions['access content'] = array(
-    'name' => 'access content',
-    'roles' => array(
-      '0' => 'anonymous user',
-      '1' => 'authenticated user',
-    ),
-  );
-
   // Exported permission: create idea content
   $permissions['create idea content'] = array(
     'name' => 'create idea content',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'administrator',
+    ),
   );
 
   // Exported permission: edit own idea content
   $permissions['edit own idea content'] = array(
     'name' => 'edit own idea content',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'administrator',
+    ),
   );
 
   // Exported permission: use gravatar
   $permissions['use gravatar'] = array(
     'name' => 'use gravatar',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'administrator',
+    ),
   );
 
   // Exported permission: use share this
   $permissions['use share this'] = array(
     'name' => 'use share this',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'administrator',
+    ),
   );
 
   // Exported permission: use vote up/down
   $permissions['use vote up/down'] = array(
     'name' => 'use vote up/down',
     'roles' => array(
-      '0' => 'authenticated user',
+      '0' => 'administrator',
+      '1' => 'authenticated user',
     ),
   );
 
@@ -51,7 +51,8 @@ function hippel_idea_user_default_permissions() {
   $permissions['use vote up/down on nodes'] = array(
     'name' => 'use vote up/down on nodes',
     'roles' => array(
-      '0' => 'authenticated user',
+      '0' => 'administrator',
+      '1' => 'authenticated user',
     ),
   );
 
@@ -59,7 +60,8 @@ function hippel_idea_user_default_permissions() {
   $permissions['view vote up/down count on nodes'] = array(
     'name' => 'view vote up/down count on nodes',
     'roles' => array(
-      '0' => 'authenticated user',
+      '0' => 'administrator',
+      '1' => 'authenticated user',
     ),
   );
 

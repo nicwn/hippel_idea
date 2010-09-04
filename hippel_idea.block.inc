@@ -6,17 +6,22 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
   switch ($op) {
     case 'list':
       $blocks['hippel-idea-vote'] = array(
-        'info' => t('Vote on this idea'),
+        'info' => t('Hippel Idea (Vote)'),
         'cache' => BLOCK_NO_CACHE,
         'status' => 0,
       );
       $blocks['hippel-idea-vote-result'] = array(
-        'info' => t('Idea vote results'),
+        'info' => t('Hippel Idea (Vote Results)'),
         'cache' => BLOCK_NO_CACHE,
         'status' => 0,
       );
       $blocks['hippel-idea-flag'] = array(
-        'info' => t('Star this idea'),
+        'info' => t('Hippel Idea (Star)'),
+        'cache' => BLOCK_NO_CACHE,
+        'status' => 0,
+      );
+      $blocks['hippel-idea-comment'] = array(
+        'info' => t('Hippel Idea (Submit Comment)'),
         'cache' => BLOCK_NO_CACHE,
         'status' => 0,
       );
@@ -43,6 +48,31 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
           'content' => flag_create_link('star', $node->nid),
         );
       }
+      if ($delta == 'hippel-idea-comment') {
+        return hippel_idea_get_block('comment');
+      }
       break;
   }
 }
+
+/**
+ * Generate a block containing a node entry form.
+ */
+function hippel_idea_get_block($type) {
+  if (node_access('create', $type)) {
+    // Include page handler for node_add()
+    module_load_include('inc', 'node', 'node.pages');
+    // Get the title before rendering the form.
+    $title = drupal_get_title();
+    $form = node_add($type);
+    // Restore title, which will have been overridden.
+    drupal_set_title($title);
+    $node_type = node_get_types('type', $type);
+    $help = (!empty($node_type->help) ? '<p>'. filter_xss_admin($node_type->help) .'</p>' : '');
+    return array(
+      'subject' => t('Add your voice'),
+      'content' => $help . $form,
+    );
+  }
+}
+

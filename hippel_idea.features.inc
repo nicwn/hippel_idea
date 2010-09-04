@@ -5,7 +5,10 @@
  */
 function hippel_idea_ctools_plugin_api() {
   list($module, $api) = func_get_args();
-  if ($module == "strongarm" && $api == "strongarm") {
+  if ($module == "context" && $api == "context") {
+    return array("version" => 3);
+  }
+  elseif ($module == "strongarm" && $api == "strongarm") {
     return array("version" => 1);
   }
 }
@@ -52,6 +55,17 @@ function hippel_idea_imagecache_default_presets() {
  */
 function hippel_idea_node_info() {
   $items = array(
+    'comment' => array(
+      'name' => t('Comment'),
+      'module' => 'features',
+      'description' => t('A comment on an idea.'),
+      'has_title' => '1',
+      'title_label' => t('Subject'),
+      'has_body' => '0',
+      'body_label' => '',
+      'min_word_count' => '0',
+      'help' => '',
+    ),
     'idea' => array(
       'name' => t('Idea'),
       'module' => 'features',
@@ -65,6 +79,75 @@ function hippel_idea_node_info() {
     ),
   );
   return $items;
+}
+
+/**
+ * Implementation of hook_rules_defaults().
+ */
+function hippel_idea_rules_defaults() {
+  return array(
+    'rules' => array(
+      'hippel_idea_1' => array(
+        '#type' => 'rule',
+        '#set' => 'event_node_insert',
+        '#label' => 'Check comment type for new comments',
+        '#active' => 1,
+        '#weight' => '0',
+        '#categories' => array(
+          '0' => 'Hippel idea',
+          'hippel_idea' => 'hippel_idea',
+        ),
+        '#status' => 'default',
+        '#conditions' => array(
+          '0' => array(
+            '#type' => 'condition',
+            '#settings' => array(
+              'type' => array(
+                'comment' => 'comment',
+              ),
+              '#argument map' => array(
+                'node' => 'node',
+              ),
+            ),
+            '#name' => 'rules_condition_content_is_type',
+            '#info' => array(
+              'label' => 'Created content is Comment',
+              'arguments' => array(
+                'node' => array(
+                  'type' => 'node',
+                  'label' => 'Content',
+                ),
+              ),
+              'module' => 'Node',
+            ),
+            '#weight' => 0,
+          ),
+        ),
+        '#actions' => array(
+          '0' => array(
+            '#weight' => 0,
+            '#info' => array(
+              'label' => 'Execute custom PHP code',
+              'module' => 'PHP',
+              'eval input' => array(
+                '0' => 'code',
+              ),
+            ),
+            '#name' => 'rules_action_custom_php',
+            '#settings' => array(
+              'code' => 'auto_nodetitle_set_title($node);
+node_save($node);',
+              'vars' => array(
+                '0' => 'node',
+              ),
+            ),
+            '#type' => 'action',
+          ),
+        ),
+        '#version' => 6003,
+      ),
+    ),
+  );
 }
 
 /**
