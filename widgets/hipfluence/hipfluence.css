@@ -33,28 +33,30 @@
   }
 
 #block-hippel_idea-hippel-idea-vote-result.block {
-  padding: 7px 20px !important;
+  padding:0px !important;
   }
 
 div.bar {
-  background-color: #333;
-  height: 20px;
-  margin: 1px 3px 1px 0;
-  border: 1px solid #ccc;
-  width: 100%;
-  float: left /*LTR*/;
+  background-color:#333;
+  margin:0px;
+  padding:0px;
+  height:40px;
+  width:640px;
+  float:left /*LTR*/;
 }
 
 div.foreground {
-  height: 20px;
-  background-color: #0e7ce2;
-  width: 100%;
-  float: left /*LTR*/;
+  line-height:40px;
+  height:40px;
+  background-color:#0e7ce2;
+  width:660px;
+  float:left /*LTR*/;
 }
 
 span.positive {
-  color: #fff;
-  width: 560px;
-  float: left;
-  margin-left: 40px;
+  color:#fff;
+  width:560px;
+  float:left;
+  margin-left:40px;
+  font-size:20px;
 }
