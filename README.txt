@@ -16,12 +16,14 @@ TODO
     to generalize each component.
 
 * Idea node/add and node/edit page
-  - POSTPONED: Resolve whether or not images need to be nodes.
   - Theme the node/add page (e.g., the help text, the imagefield fieldset,
     the tags, the buttons).
   - Write documentation for customizing the theme of the node/add page.
+  - POSTPONED: Resolve whether or not images need to be nodes.
 
 * Idea node page
+  - Redirect back to node after submitting a comment.
+  - Review using ajax for submitting comments and updating the comment view.
   - Decide on an approach to the "related ideas" block (views).
   - Add the "active ideas" block (views).
   - Theme the node page
