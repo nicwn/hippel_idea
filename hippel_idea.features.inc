@@ -55,17 +55,6 @@ function hippel_idea_imagecache_default_presets() {
  */
 function hippel_idea_node_info() {
   $items = array(
-    'comment' => array(
-      'name' => t('Comment'),
-      'module' => 'features',
-      'description' => t('A comment on an idea.'),
-      'has_title' => '1',
-      'title_label' => t('Subject'),
-      'has_body' => '0',
-      'body_label' => '',
-      'min_word_count' => '0',
-      'help' => '',
-    ),
     'idea' => array(
       'name' => t('Idea'),
       'module' => 'features',
@@ -76,6 +65,17 @@ function hippel_idea_node_info() {
       'body_label' => '',
       'min_word_count' => '0',
       'help' => t('You have an idea. What will you call it? What does it look like? Why do you think other people should be interested in your idea? Name your idea, show it and describe it. After you submit your idea, other people will be able to vote on it, ask questions and make suggestions. If enough people like your idea, we\'ll make it a reality and you\'ll share the rewards for your innovation.'),
+    ),
+    'idea_comment' => array(
+      'name' => t('Idea Comment'),
+      'module' => 'features',
+      'description' => t('A comment on an idea.'),
+      'has_title' => '1',
+      'title_label' => t('Subject'),
+      'has_body' => '0',
+      'body_label' => '',
+      'min_word_count' => '0',
+      'help' => '',
     ),
   );
   return $items;

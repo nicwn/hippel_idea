@@ -8,22 +8,18 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
       $blocks['hippel-idea-vote'] = array(
         'info' => t('Hippel Idea (Vote)'),
         'cache' => BLOCK_NO_CACHE,
-        'status' => 0,
       );
       $blocks['hippel-idea-vote-result'] = array(
-        'info' => t('Hippel Idea (Vote Results)'),
+        'info' => t('Hippel Idea (Vote Result)'),
         'cache' => BLOCK_NO_CACHE,
-        'status' => 0,
       );
       $blocks['hippel-idea-flag'] = array(
         'info' => t('Hippel Idea (Star)'),
         'cache' => BLOCK_NO_CACHE,
-        'status' => 0,
       );
       $blocks['hippel-idea-comment'] = array(
         'info' => t('Hippel Idea (Submit Comment)'),
         'cache' => BLOCK_NO_CACHE,
-        'status' => 0,
       );
       return $blocks;
       break;

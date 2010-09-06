@@ -19,7 +19,7 @@ function hippel_idea_form_idea_node_form_alter(&$form, $form_state) {
   // Build Breadcrumbs
   $breadcrumb = array();
   $breadcrumb[] = l(t('Home'), '<front>');
-  $breadcrumb[] = l(t('My hippel'), 'user');
+  $breadcrumb[] = l(t('Ideas'), 'ideas');
 
   // Set Breadcrumbs
   drupal_set_breadcrumb($breadcrumb);

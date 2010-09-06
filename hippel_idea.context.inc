@@ -8,8 +8,8 @@ function hippel_idea_context_default_contexts() {
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'hippel_idea';
-  $context->description = 'A context for ideas.';
+  $context->name = 'idea';
+  $context->description = 'A context for an individual idea.';
   $context->tag = 'Hippel Idea';
   $context->conditions = array(
     'node' => array(
@@ -79,9 +79,81 @@ function hippel_idea_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('A context for ideas.');
+  t('A context for an individual idea.');
   t('Hippel Idea');
 
-  $export['hippel_idea'] = $context;
+  $export['idea'] = $context;
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'ideas_grid';
+  $context->description = 'A context for the all idea grid views.';
+  $context->tag = 'Hippel Idea';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'ideas' => 'ideas',
+        'ideas/active' => 'ideas/active',
+        'ideas/new' => 'ideas/new',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'menu-menu-idea-grids' => array(
+          'module' => 'menu',
+          'delta' => 'menu-idea-grids',
+          'region' => 'lead',
+          'weight' => 0,
+        ),
+      ),
+    ),
+    'menu' => 'ideas',
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('A context for the all idea grid views.');
+  t('Hippel Idea');
+
+  $export['ideas_grid'] = $context;
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'ideas_list';
+  $context->description = 'A context for the all idea list views.';
+  $context->tag = 'Hippel Idea';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'ideas/list' => 'ideas/list',
+        'ideas/active/list' => 'ideas/active/list',
+        'ideas/new/list' => 'ideas/new/list',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'menu-menu-idea-lists' => array(
+          'module' => 'menu',
+          'delta' => 'menu-idea-lists',
+          'region' => 'lead',
+          'weight' => 0,
+        ),
+      ),
+    ),
+    'menu' => 'ideas',
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('A context for the all idea list views.');
+  t('Hippel Idea');
+
+  $export['ideas_list'] = $context;
   return $export;
 }

@@ -12,13 +12,17 @@ function hippel_idea_menu_default_menu_links() {
     'link_path' => 'ideas',
     'router_path' => 'ideas',
     'link_title' => 'Ideas',
-    'options' => array(),
-    'module' => 'system',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'menu',
     'hidden' => '0',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-50',
+    'weight' => '0',
   );
   // Translatables
   // Included for use with string extractors like potx.
