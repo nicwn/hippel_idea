@@ -36,15 +36,15 @@ function hippel_idea_context_default_contexts() {
           'region' => 'lead',
           'weight' => 1,
         ),
-        'hippel_idea-hippel-idea-comment' => array(
+        'hippel_idea-hippel-idea-voice' => array(
           'module' => 'hippel_idea',
-          'delta' => 'hippel-idea-comment',
+          'delta' => 'hippel-idea-voice',
           'region' => 'content',
           'weight' => 0,
         ),
-        'views-hippel_idea_comments-block_1' => array(
+        'views-hippel_idea_voice-block_1' => array(
           'module' => 'views',
-          'delta' => 'hippel_idea_comments-block_1',
+          'delta' => 'hippel_idea_voice-block_1',
           'region' => 'content',
           'weight' => 1,
         ),

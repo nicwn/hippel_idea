@@ -66,8 +66,8 @@ function hippel_idea_node_info() {
       'min_word_count' => '0',
       'help' => t('You have an idea. What will you call it? What does it look like? Why do you think other people should be interested in your idea? Name your idea, show it and describe it. After you submit your idea, other people will be able to vote on it, ask questions and make suggestions. If enough people like your idea, we\'ll make it a reality and you\'ll share the rewards for your innovation.'),
     ),
-    'idea_comment' => array(
-      'name' => t('Idea Comment'),
+    'voice' => array(
+      'name' => t('Your voice'),
       'module' => 'features',
       'description' => t('A comment on an idea.'),
       'has_title' => '1',
@@ -94,7 +94,6 @@ function hippel_idea_rules_defaults() {
         '#active' => 1,
         '#weight' => '0',
         '#categories' => array(
-          '0' => 'Hippel idea',
           'hippel_idea' => 'hippel_idea',
         ),
         '#status' => 'default',
@@ -103,7 +102,7 @@ function hippel_idea_rules_defaults() {
             '#type' => 'condition',
             '#settings' => array(
               'type' => array(
-                'comment' => 'comment',
+                'voice' => 'voice',
               ),
               '#argument map' => array(
                 'node' => 'node',
@@ -111,7 +110,7 @@ function hippel_idea_rules_defaults() {
             ),
             '#name' => 'rules_condition_content_is_type',
             '#info' => array(
-              'label' => 'Created content is Comment',
+              'label' => 'Created content is Voice',
               'arguments' => array(
                 'node' => array(
                   'type' => 'node',

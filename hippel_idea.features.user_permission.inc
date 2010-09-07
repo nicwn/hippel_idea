@@ -10,7 +10,15 @@ function hippel_idea_user_default_permissions() {
   $permissions['create idea content'] = array(
     'name' => 'create idea content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: create voice content
+  $permissions['create voice content'] = array(
+    'name' => 'create voice content',
+    'roles' => array(
+      '0' => 'authenticated user',
     ),
   );
 
@@ -18,7 +26,7 @@ function hippel_idea_user_default_permissions() {
   $permissions['edit own idea content'] = array(
     'name' => 'edit own idea content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'authenticated user',
     ),
   );
 
@@ -26,7 +34,7 @@ function hippel_idea_user_default_permissions() {
   $permissions['use gravatar'] = array(
     'name' => 'use gravatar',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'authenticated user',
     ),
   );
 
@@ -34,7 +42,7 @@ function hippel_idea_user_default_permissions() {
   $permissions['use share this'] = array(
     'name' => 'use share this',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'authenticated user',
     ),
   );
 
@@ -42,8 +50,7 @@ function hippel_idea_user_default_permissions() {
   $permissions['use vote up/down'] = array(
     'name' => 'use vote up/down',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
+      '0' => 'authenticated user',
     ),
   );
 
@@ -51,8 +58,7 @@ function hippel_idea_user_default_permissions() {
   $permissions['use vote up/down on nodes'] = array(
     'name' => 'use vote up/down on nodes',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
+      '0' => 'authenticated user',
     ),
   );
 
@@ -60,8 +66,7 @@ function hippel_idea_user_default_permissions() {
   $permissions['view vote up/down count on nodes'] = array(
     'name' => 'view vote up/down count on nodes',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
+      '0' => 'authenticated user',
     ),
   );
 

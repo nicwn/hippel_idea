@@ -185,10 +185,68 @@ function hippel_idea_content_default_fields() {
     ),
   );
 
-  // Exported field: field_comment
-  $fields['idea_comment-field_comment'] = array(
-    'field_name' => 'field_comment',
-    'type_name' => 'idea_comment',
+  // Exported field: field_idea_reference
+  $fields['voice-field_idea_reference'] = array(
+    'field_name' => 'field_idea_reference',
+    'type_name' => 'voice',
+    'display_settings' => array(
+      'weight' => '4',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'nodereference',
+    'required' => '1',
+    'multiple' => '0',
+    'module' => 'nodereference',
+    'active' => '1',
+    'referenceable_types' => array(
+      'idea' => 'idea',
+      'voice' => 0,
+      'page' => 0,
+      'product' => 0,
+      'story' => 0,
+    ),
+    'advanced_view' => '--',
+    'advanced_view_args' => '',
+    'widget' => array(
+      'autocomplete_match' => 'contains',
+      'size' => '60',
+      'default_value' => NULL,
+      'default_value_php' => '$node = menu_get_object;
+return array(
+  0 => array(\'nid\' => $node->nid),
+);',
+      'label' => 'Idea reference',
+      'weight' => '4',
+      'description' => '',
+      'type' => 'nodereference_select',
+      'module' => 'nodereference',
+    ),
+  );
+
+  // Exported field: field_voice
+  $fields['voice-field_voice'] = array(
+    'field_name' => 'field_voice',
+    'type_name' => 'voice',
     'display_settings' => array(
       'weight' => '2',
       'parent' => '',
@@ -228,7 +286,7 @@ function hippel_idea_content_default_fields() {
       'default_value' => array(
         '0' => array(
           'value' => '',
-          '_error_element' => 'default_value_widget][field_comment][0][value',
+          '_error_element' => 'default_value_widget][field_voice][0][value',
         ),
       ),
       'default_value_php' => NULL,
@@ -240,10 +298,10 @@ function hippel_idea_content_default_fields() {
     ),
   );
 
-  // Exported field: field_comment_image
-  $fields['idea_comment-field_comment_image'] = array(
-    'field_name' => 'field_comment_image',
-    'type_name' => 'idea_comment',
+  // Exported field: field_voice_image
+  $fields['voice-field_voice_image'] = array(
+    'field_name' => 'field_voice_image',
+    'type_name' => 'voice',
     'display_settings' => array(
       'weight' => '3',
       'parent' => '',
@@ -299,10 +357,10 @@ function hippel_idea_content_default_fields() {
     ),
   );
 
-  // Exported field: field_comment_type
-  $fields['idea_comment-field_comment_type'] = array(
-    'field_name' => 'field_comment_type',
-    'type_name' => 'idea_comment',
+  // Exported field: field_voice_type
+  $fields['voice-field_voice_type'] = array(
+    'field_name' => 'field_voice_type',
+    'type_name' => 'voice',
     'display_settings' => array(
       'weight' => '-1',
       'parent' => '',
@@ -351,64 +409,6 @@ function hippel_idea_content_default_fields() {
       'description' => '',
       'type' => 'content_taxonomy_options',
       'module' => 'content_taxonomy_options',
-    ),
-  );
-
-  // Exported field: field_idea_reference
-  $fields['idea_comment-field_idea_reference'] = array(
-    'field_name' => 'field_idea_reference',
-    'type_name' => 'idea_comment',
-    'display_settings' => array(
-      'weight' => '4',
-      'parent' => '',
-      'label' => array(
-        'format' => 'hidden',
-      ),
-      'teaser' => array(
-        'format' => 'hidden',
-        'exclude' => 0,
-      ),
-      'full' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'token' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-    ),
-    'widget_active' => '1',
-    'type' => 'nodereference',
-    'required' => '1',
-    'multiple' => '0',
-    'module' => 'nodereference',
-    'active' => '1',
-    'referenceable_types' => array(
-      'idea' => 'idea',
-      'comment' => 0,
-      'page' => 0,
-      'product' => 0,
-      'story' => 0,
-    ),
-    'advanced_view' => '--',
-    'advanced_view_args' => '',
-    'widget' => array(
-      'autocomplete_match' => 'contains',
-      'size' => '60',
-      'default_value' => NULL,
-      'default_value_php' => '$node = menu_get_object;
-return array(
-  0 => array(\'nid\' => $node->nid),
-);',
-      'label' => 'Idea reference',
-      'weight' => '4',
-      'description' => '',
-      'type' => 'nodereference_select',
-      'module' => 'nodereference',
     ),
   );
 

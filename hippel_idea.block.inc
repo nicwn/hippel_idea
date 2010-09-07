@@ -18,7 +18,7 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
         'cache' => BLOCK_NO_CACHE,
       );
       $blocks['hippel-idea-comment'] = array(
-        'info' => t('Hippel Idea (Submit Comment)'),
+        'info' => t('Hippel Idea (Your voice)'),
         'cache' => BLOCK_NO_CACHE,
       );
       return $blocks;
@@ -44,8 +44,8 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
           'content' => flag_create_link('star', $node->nid),
         );
       }
-      if ($delta == 'hippel-idea-comment') {
-        return hippel_idea_get_block('comment');
+      if ($delta == 'hippel-idea-voice') {
+        return hippel_idea_get_block('voice', 'Add your voice');
       }
       break;
   }
@@ -54,7 +54,7 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
 /**
  * Generate a block containing a node entry form.
  */
-function hippel_idea_get_block($type) {
+function hippel_idea_get_block($type, $subject) {
   if (node_access('create', $type)) {
     // Include page handler for node_add()
     module_load_include('inc', 'node', 'node.pages');
@@ -66,7 +66,7 @@ function hippel_idea_get_block($type) {
     $node_type = node_get_types('type', $type);
     $help = (!empty($node_type->help) ? '<p>'. filter_xss_admin($node_type->help) .'</p>' : '');
     return array(
-      'subject' => t('Add your voice'),
+      'subject' => t($subject),
       'content' => $help . $form,
     );
   }
