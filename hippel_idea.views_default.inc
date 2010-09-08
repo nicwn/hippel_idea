@@ -1162,7 +1162,7 @@ function hippel_idea_views_default_views() {
   $handler = $view->new_display('block', 'All', 'block_1');
   $handler->override_option('block_description', 'Hippel Idea (Voices)');
   $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'Voices', 'block_2');
+  $handler = $view->new_display('block', 'Comments', 'block_2');
   $handler->override_option('filters', array(
     'type' => array(
       'operator' => 'in',
@@ -1200,7 +1200,7 @@ function hippel_idea_views_default_views() {
     'field_voice_type_value' => array(
       'operator' => 'or',
       'value' => array(
-        '4' => '4',
+        '1' => '1',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -1218,7 +1218,7 @@ function hippel_idea_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
-  $handler->override_option('block_description', '');
+  $handler->override_option('block_description', 'Hippel Idea (Comments)');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Questions', 'block_3');
   $handler->override_option('filters', array(
@@ -1258,7 +1258,7 @@ function hippel_idea_views_default_views() {
     'field_voice_type_value' => array(
       'operator' => 'or',
       'value' => array(
-        '5' => '5',
+        '2' => '2',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -1276,7 +1276,7 @@ function hippel_idea_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
-  $handler->override_option('block_description', '');
+  $handler->override_option('block_description', 'Hippel Idea (Questions)');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Suggestions', 'block_4');
   $handler->override_option('filters', array(
@@ -1316,7 +1316,7 @@ function hippel_idea_views_default_views() {
     'field_voice_type_value' => array(
       'operator' => 'or',
       'value' => array(
-        '6' => '6',
+        '3' => '3',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -1334,7 +1334,7 @@ function hippel_idea_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
-  $handler->override_option('block_description', '');
+  $handler->override_option('block_description', 'Hippel Idea (Suggestions)');
   $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;

@@ -42,9 +42,9 @@ function hippel_idea_context_default_contexts() {
           'region' => 'content',
           'weight' => 0,
         ),
-        'views-hippel_idea_voice-block_1' => array(
+        'views-hippel_idea_voices-block_1' => array(
           'module' => 'views',
-          'delta' => 'hippel_idea_voice-block_1',
+          'delta' => 'hippel_idea_voices-block_1',
           'region' => 'content',
           'weight' => 1,
         ),
@@ -101,9 +101,9 @@ function hippel_idea_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu-menu-idea-grids' => array(
+        'menu-menu-idea-grid' => array(
           'module' => 'menu',
-          'delta' => 'menu-idea-grids',
+          'delta' => 'menu-idea-grid',
           'region' => 'lead',
           'weight' => 0,
         ),
@@ -137,9 +137,9 @@ function hippel_idea_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu-menu-idea-lists' => array(
+        'menu-menu-idea-list' => array(
           'module' => 'menu',
-          'delta' => 'menu-idea-lists',
+          'delta' => 'menu-idea-list',
           'region' => 'lead',
           'weight' => 0,
         ),

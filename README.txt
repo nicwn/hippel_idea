@@ -22,11 +22,7 @@ APPENDIX
 ========================================================================== TODO
 ----------------------------------------------------------- Hippel Idea feature
 - Check the installation of the Hippel Idea feature.
-  * Add taxonomy terms for the idea tag vocabulary to the feature.
-  * Add taxonomy terms for the comment type vocabulary to the feature.
-  * Strongarm? "idea" found on author pane admin page.
-  * Strongarm? "star" flag found on flags admin page.
-  * Strongarm? comment "flag" fond on flags admin page.
+  * Use hooks instead of queries to insert flag and taxonomy terms.
 - Review menu/path structure.
 - Check dependencies.
 - Code review and other housecleaning.

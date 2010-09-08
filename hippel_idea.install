@@ -1,0 +1,109 @@
+<?php
+/**
+* Implementation of hook_install()
+*/
+function hippel_idea_install() {
+  $vocabulary = array(
+    'name' => 'Voice tags',
+    'multiple' => 0,
+    'required' => 0,
+    'hierarchy' => 0,
+    'relations' => 1,
+    'weight' => 0,
+    'nodes' => array(),
+    'tags' => FALSE,
+    'help' => t(''),
+  );
+  taxonomy_save_vocabulary($vocabulary);
+
+  $vocabulary = array(
+    'name' => 'Idea tags',
+    'multiple' => 0,
+    'required' => 0,
+    'hierarchy' => 0,
+    'relations' => 1,
+    'weight' => 0,
+    'nodes' => array(),
+    'tags' => FALSE,
+    'help' => t(''),
+  );
+  taxonomy_save_vocabulary($vocabulary);
+
+  // Add "star" flag to flags.
+  db_query("INSERT INTO {flags} (fid, content_type, name, title, roles, global, options)
+            VALUES ('%d', '%s', '%s', '%s', '%s', '%d', '%s')",
+            2,
+            'node',
+            'star',
+            'Star this idea',
+            '2',
+            0,
+            'a:13:{s:10:"flag_short";s:14:"Star this idea";s:9:"flag_long";s:0:"";s:12:"flag_message";s:0:"";s:17:"flag_confirmation";s:0:"";s:12:"unflag_short";s:16:"Unstar this idea";s:11:"unflag_long";s:0:"";s:14:"unflag_message";s:0:"";s:19:"unflag_confirmation";s:0:"";s:9:"link_type";s:6:"toggle";s:12:"show_on_page";i:0;s:14:"show_on_teaser";i:0;s:12:"show_on_form";i:0;s:4:"i18n";i:0;}'
+  );
+  // Add "star" flag to idea content type.
+  db_query("INSERT INTO {flag_types} (fid, type)
+            VALUES ('%d', '%s')",
+            2,
+            'idea'
+  );
+  // Add "leaving a comment" term to "Voice tags" vocabulary.
+  db_query("INSERT INTO {term_data} (tid, vid, name, description, weight)
+            VALUES ('%d', '%d', '%s', '%s', '%d')",
+            1,
+            1,
+            'leaving a comment',
+            '',
+            0
+  );
+  // Set hierarcy for "leaving a comment" term.
+  db_query("INSERT INTO {term_hierarchy} (tid, parent)
+            VALUES ('%d', '%d')",
+            1,
+            0
+  );
+  // Add "asking a question" term to "Voice tags" vocabulary.
+  db_query("INSERT INTO {term_data} (tid, vid, name, description, weight)
+            VALUES ('%d', '%d', '%s', '%s', '%d')",
+            2,
+            1,
+            'asking a question',
+            '',
+            10
+  );
+  // Set hierarcy for "asking a question" term.
+  db_query("INSERT INTO {term_hierarchy} (tid, parent)
+            VALUES ('%d', '%d')",
+            2,
+            0
+  );
+  // Add "making a suggestion" term to "Voice tags" vocabulary.
+  db_query("INSERT INTO {term_data} (tid, vid, name, description, weight)
+            VALUES ('%d', '%d', '%s', '%s', '%d')",
+            3,
+            1,
+            'making a suggestion',
+            '',
+            20
+  );
+  // Set hierarcy for "making a suggestion" term.
+  db_query("INSERT INTO {term_hierarchy} (tid, parent)
+            VALUES ('%d', '%d')",
+            3,
+            0
+  );
+  // Add "Designed by ME" term to "Idea tags" vocabulary.
+  db_query("INSERT INTO {term_data} (tid, vid, name, description, weight)
+            VALUES ('%d', '%d', '%s', '%s', '%d')",
+            4,
+            2,
+            'Designed by ME',
+            '',
+            0
+  );
+  // Set hierarcy for "Designed by ME" term.
+  db_query("INSERT INTO {term_hierarchy} (tid, parent)
+            VALUES ('%d', '%d')",
+            4,
+            0
+  );
+}

@@ -173,7 +173,7 @@ function hippel_idea_content_default_fields() {
     'widget' => array(
       'default_value' => array(
         'field_idea_tag' => array(
-          'tids' => NULL,
+          'tids' => array(),
         ),
       ),
       'default_value_php' => NULL,
@@ -391,7 +391,7 @@ return array(
     'module' => 'content_taxonomy',
     'active' => '1',
     'save_term_node' => 1,
-    'vid' => '3',
+    'vid' => '1',
     'parent' => '0',
     'parent_php_code' => '',
     'depth' => '',

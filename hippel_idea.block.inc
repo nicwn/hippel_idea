@@ -17,7 +17,7 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
         'info' => t('Hippel Idea (Star)'),
         'cache' => BLOCK_NO_CACHE,
       );
-      $blocks['hippel-idea-comment'] = array(
+      $blocks['hippel-idea-voice'] = array(
         'info' => t('Hippel Idea (Your voice)'),
         'cache' => BLOCK_NO_CACHE,
       );
