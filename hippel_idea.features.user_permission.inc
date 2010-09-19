@@ -46,14 +46,6 @@ function hippel_idea_user_default_permissions() {
     ),
   );
 
-  // Exported permission: create voice content
-  $permissions['create voice content'] = array(
-    'name' => 'create voice content',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
-  );
-
   // Exported permission: edit own idea content
   $permissions['edit own idea content'] = array(
     'name' => 'edit own idea content',

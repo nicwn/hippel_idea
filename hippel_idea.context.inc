@@ -49,15 +49,15 @@ function hippel_idea_context_default_contexts() {
           'region' => 'lead',
           'weight' => 1,
         ),
-        'quicktabs-2' => array(
+        'quicktabs-hippel_idea_voice_forms' => array(
           'module' => 'quicktabs',
-          'delta' => 2,
+          'delta' => 'hippel_idea_voice_forms',
           'region' => 'content',
           'weight' => 0,
         ),
-        'quicktabs-1' => array(
+        'quicktabs-hippel_idea_voices' => array(
           'module' => 'quicktabs',
-          'delta' => 1,
+          'delta' => 'hippel_idea_voices',
           'region' => 'content',
           'weight' => 1,
         ),
@@ -140,9 +140,9 @@ function hippel_idea_context_default_contexts() {
           'region' => 'lead',
           'weight' => 1,
         ),
-        'quicktabs-1' => array(
+        'quicktabs-hippel_idea_voices' => array(
           'module' => 'quicktabs',
-          'delta' => 1,
+          'delta' => 'hippel_idea_voices',
           'region' => 'content',
           'weight' => 0,
         ),
