@@ -1066,7 +1066,7 @@ function hippel_idea_views_default_views() {
       'breadcrumb' => '',
       'default_argument_type' => 'node',
       'default_argument' => '',
-      'validate_type' => 'none',
+      'validate_type' => 'node',
       'validate_fail' => 'not found',
       'break_phrase' => 0,
       'not' => 0,
@@ -1077,6 +1077,8 @@ function hippel_idea_views_default_views() {
       'validate_user_roles' => array(
         '2' => 0,
         '3' => 0,
+        '4' => 0,
+        '5' => 0,
       ),
       'relationship' => 'none',
       'default_options_div_prefix' => '',
@@ -1084,16 +1086,20 @@ function hippel_idea_views_default_views() {
       'default_argument_user' => 0,
       'default_argument_php' => '',
       'validate_argument_node_type' => array(
-        'idea' => 0,
+        'idea' => 'idea',
         'voice' => 0,
+        'animal' => 0,
+        'group' => 0,
+        'image' => 0,
+        'link' => 0,
         'page' => 0,
-        'product' => 0,
+        'question' => 0,
         'story' => 0,
+        'suggestion' => 0,
       ),
-      'validate_argument_node_access' => 0,
+      'validate_argument_node_access' => 1,
       'validate_argument_nid_type' => 'nid',
       'validate_argument_vocabulary' => array(
-        '3' => 0,
         '2' => 0,
         '1' => 0,
       ),
@@ -1107,13 +1113,20 @@ function hippel_idea_views_default_views() {
       'validate_argument_user_flag_test' => 'flaggable',
       'validate_argument_user_flag_id_type' => 'id',
       'validate_argument_php' => '',
+      'validate_argument_is_member' => 'OG_VIEWS_DO_NOT_VALIDATE_MEMBERSHIP',
+      'validate_argument_group_node_type' => array(
+        'group' => 0,
+      ),
     ),
   ));
   $handler->override_option('filters', array(
     'type' => array(
       'operator' => 'in',
       'value' => array(
-        'voice' => 'voice',
+        'image' => 'image',
+        'link' => 'link',
+        'question' => 'question',
+        'suggestion' => 'suggestion',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -1150,6 +1163,8 @@ function hippel_idea_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
+  $handler->override_option('empty', 'No one has added their voice to this idea.');
+  $handler->override_option('empty_format', '1');
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 50);
   $handler->override_option('row_plugin', 'node');
@@ -1162,70 +1177,12 @@ function hippel_idea_views_default_views() {
   $handler = $view->new_display('block', 'All', 'block_1');
   $handler->override_option('block_description', 'Hippel Idea (Voices)');
   $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'Comments', 'block_2');
-  $handler->override_option('filters', array(
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'voice' => 'voice',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
-      'override' => array(
-        'button' => 'Override',
-      ),
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => '1',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-    'field_voice_type_value' => array(
-      'operator' => 'or',
-      'value' => array(
-        '1' => '1',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'field_voice_type_value',
-      'table' => 'node_data_field_voice_type',
-      'field' => 'field_voice_type_value',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-      'reduce_duplicates' => 0,
-    ),
-  ));
-  $handler->override_option('block_description', 'Hippel Idea (Comments)');
-  $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Questions', 'block_3');
   $handler->override_option('filters', array(
     'type' => array(
       'operator' => 'in',
       'value' => array(
-        'voice' => 'voice',
+        'question' => 'question',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -1238,7 +1195,7 @@ function hippel_idea_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
       'override' => array(
-        'button' => 'Override',
+        'button' => 'Use default',
       ),
     ),
     'status' => array(
@@ -1255,27 +1212,8 @@ function hippel_idea_views_default_views() {
       'field' => 'status',
       'relationship' => 'none',
     ),
-    'field_voice_type_value' => array(
-      'operator' => 'or',
-      'value' => array(
-        '2' => '2',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'field_voice_type_value',
-      'table' => 'node_data_field_voice_type',
-      'field' => 'field_voice_type_value',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-      'reduce_duplicates' => 0,
-    ),
   ));
+  $handler->override_option('empty', 'No one has asked a question about this idea.');
   $handler->override_option('block_description', 'Hippel Idea (Questions)');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Suggestions', 'block_4');
@@ -1283,7 +1221,7 @@ function hippel_idea_views_default_views() {
     'type' => array(
       'operator' => 'in',
       'value' => array(
-        'voice' => 'voice',
+        'suggestion' => 'suggestion',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -1296,7 +1234,7 @@ function hippel_idea_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
       'override' => array(
-        'button' => 'Override',
+        'button' => 'Use default',
       ),
     ),
     'status' => array(
@@ -1313,10 +1251,16 @@ function hippel_idea_views_default_views() {
       'field' => 'status',
       'relationship' => 'none',
     ),
-    'field_voice_type_value' => array(
-      'operator' => 'or',
+  ));
+  $handler->override_option('empty', 'No one has made a suggestion for this idea.');
+  $handler->override_option('block_description', 'Hippel Idea (Suggestions)');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Images', 'block_5');
+  $handler->override_option('filters', array(
+    'type' => array(
+      'operator' => 'in',
       'value' => array(
-        '3' => '3',
+        'image' => 'image',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -1324,17 +1268,70 @@ function hippel_idea_views_default_views() {
         'operator' => FALSE,
         'label' => '',
       ),
-      'id' => 'field_voice_type_value',
-      'table' => 'node_data_field_voice_type',
-      'field' => 'field_voice_type_value',
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
       'override' => array(
         'button' => 'Use default',
       ),
+    ),
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
       'relationship' => 'none',
-      'reduce_duplicates' => 0,
     ),
   ));
-  $handler->override_option('block_description', 'Hippel Idea (Suggestions)');
+  $handler->override_option('empty', 'No one has uploaded an image to this idea.');
+  $handler->override_option('block_description', 'Hippel Idea (Images)');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Links', 'block_6');
+  $handler->override_option('filters', array(
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'link' => 'link',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('empty', 'No one has shared a link for this idea.');
+  $handler->override_option('block_description', 'Hippel Idea (Links)');
   $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;

@@ -20,6 +20,19 @@ function hippel_idea_context_default_contexts() {
         'node_form' => '0',
       ),
     ),
+    'node_author' => array(
+      'values' => array(
+        'view' => 'view',
+      ),
+      'options' => array(
+        'mode' => 'other',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'authenticated user' => 'authenticated user',
+      ),
+    ),
   );
   $context->reactions = array(
     'block' => array(
@@ -36,15 +49,15 @@ function hippel_idea_context_default_contexts() {
           'region' => 'lead',
           'weight' => 1,
         ),
-        'hippel_idea-hippel-idea-voice' => array(
-          'module' => 'hippel_idea',
-          'delta' => 'hippel-idea-voice',
+        'quicktabs-2' => array(
+          'module' => 'quicktabs',
+          'delta' => 2,
           'region' => 'content',
           'weight' => 0,
         ),
-        'views-hippel_idea_voices-block_1' => array(
-          'module' => 'views',
-          'delta' => 'hippel_idea_voices-block_1',
+        'quicktabs-1' => array(
+          'module' => 'quicktabs',
+          'delta' => 1,
           'region' => 'content',
           'weight' => 1,
         ),
@@ -83,6 +96,79 @@ function hippel_idea_context_default_contexts() {
   t('Hippel Idea');
 
   $export['idea'] = $context;
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'idea_author';
+  $context->description = 'A context for an individual idea.';
+  $context->tag = 'Hippel Idea';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'idea' => 'idea',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+    'node_author' => array(
+      'values' => array(
+        'view' => 'view',
+      ),
+      'options' => array(
+        'mode' => 'author',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'authenticated user' => 'authenticated user',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'hippel_idea-hippel-idea-vote-result' => array(
+          'module' => 'hippel_idea',
+          'delta' => 'hippel-idea-vote-result',
+          'region' => 'lead',
+          'weight' => 0,
+        ),
+        'views-ca97c5b8f4f6f6be233af8f62371da82' => array(
+          'module' => 'views',
+          'delta' => 'ca97c5b8f4f6f6be233af8f62371da82',
+          'region' => 'lead',
+          'weight' => 1,
+        ),
+        'quicktabs-1' => array(
+          'module' => 'quicktabs',
+          'delta' => 1,
+          'region' => 'content',
+          'weight' => 0,
+        ),
+        'author_pane-0' => array(
+          'module' => 'author_pane',
+          'delta' => 0,
+          'region' => 'right',
+          'weight' => 0,
+        ),
+        'sharethis-sharethis' => array(
+          'module' => 'sharethis',
+          'delta' => 'sharethis',
+          'region' => 'right',
+          'weight' => 1,
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('A context for an individual idea.');
+  t('Hippel Idea');
+
+  $export['idea_author'] = $context;
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;

@@ -8,17 +8,73 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ant_pattern_voice';
-  $strongarm->value = '<?php $terms = taxonomy_node_get_terms_by_vocabulary($node, 1); ?>
-<?php foreach ($terms as $term) { ?>
-<?php $type = check_plain($term->name); ?>
-<?php if ($type == "asking a question"): print "Question"; ?>
-<?php elseif ($type == "making a suggestion"): print "Suggestion"; ?>
-<?php else: print "Comment"; ?>
-<?php endif; ?>
-<?php } ?>';
+  $strongarm->name = 'ant_image';
+  $strongarm->value = '1';
 
-  $export['ant_pattern_voice'] = $strongarm;
+  $export['ant_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_link';
+  $strongarm->value = '1';
+
+  $export['ant_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_image';
+  $strongarm->value = 'Image';
+
+  $export['ant_pattern_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_link';
+  $strongarm->value = 'Image';
+
+  $export['ant_pattern_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_question';
+  $strongarm->value = 'Question';
+
+  $export['ant_pattern_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_suggestion';
+  $strongarm->value = 'Suggestion';
+
+  $export['ant_pattern_suggestion'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_image';
+  $strongarm->value = 0;
+
+  $export['ant_php_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_link';
+  $strongarm->value = 0;
+
+  $export['ant_php_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_question';
+  $strongarm->value = 0;
+
+  $export['ant_php_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_suggestion';
+  $strongarm->value = 0;
+
+  $export['ant_php_suggestion'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -29,10 +85,17 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ant_voice';
+  $strongarm->name = 'ant_question';
   $strongarm->value = '1';
 
-  $export['ant_voice'] = $strongarm;
+  $export['ant_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_suggestion';
+  $strongarm->value = '1';
+
+  $export['ant_suggestion'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -76,10 +139,31 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_voice';
+  $strongarm->name = 'comment_anonymous_image';
   $strongarm->value = 0;
 
-  $export['comment_anonymous_voice'] = $strongarm;
+  $export['comment_anonymous_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_link';
+  $strongarm->value = 0;
+
+  $export['comment_anonymous_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_question';
+  $strongarm->value = 0;
+
+  $export['comment_anonymous_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_suggestion';
+  $strongarm->value = 0;
+
+  $export['comment_anonymous_suggestion'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -90,10 +174,31 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_controls_voice';
+  $strongarm->name = 'comment_controls_image';
   $strongarm->value = '3';
 
-  $export['comment_controls_voice'] = $strongarm;
+  $export['comment_controls_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_controls_link';
+  $strongarm->value = '3';
+
+  $export['comment_controls_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_controls_question';
+  $strongarm->value = '3';
+
+  $export['comment_controls_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_controls_suggestion';
+  $strongarm->value = '3';
+
+  $export['comment_controls_suggestion'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -104,10 +209,31 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_voice';
+  $strongarm->name = 'comment_default_mode_image';
   $strongarm->value = '4';
 
-  $export['comment_default_mode_voice'] = $strongarm;
+  $export['comment_default_mode_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_link';
+  $strongarm->value = '4';
+
+  $export['comment_default_mode_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_question';
+  $strongarm->value = '4';
+
+  $export['comment_default_mode_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_suggestion';
+  $strongarm->value = '4';
+
+  $export['comment_default_mode_suggestion'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -118,10 +244,31 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_order_voice';
+  $strongarm->name = 'comment_default_order_image';
   $strongarm->value = '1';
 
-  $export['comment_default_order_voice'] = $strongarm;
+  $export['comment_default_order_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_order_link';
+  $strongarm->value = '1';
+
+  $export['comment_default_order_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_order_question';
+  $strongarm->value = '1';
+
+  $export['comment_default_order_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_order_suggestion';
+  $strongarm->value = '1';
+
+  $export['comment_default_order_suggestion'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -132,10 +279,31 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_voice';
+  $strongarm->name = 'comment_default_per_page_image';
   $strongarm->value = '50';
 
-  $export['comment_default_per_page_voice'] = $strongarm;
+  $export['comment_default_per_page_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_link';
+  $strongarm->value = '50';
+
+  $export['comment_default_per_page_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_question';
+  $strongarm->value = '50';
+
+  $export['comment_default_per_page_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_suggestion';
+  $strongarm->value = '50';
+
+  $export['comment_default_per_page_suggestion'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -146,10 +314,31 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_voice';
-  $strongarm->value = '1';
+  $strongarm->name = 'comment_form_location_image';
+  $strongarm->value = '0';
 
-  $export['comment_form_location_voice'] = $strongarm;
+  $export['comment_form_location_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_link';
+  $strongarm->value = '0';
+
+  $export['comment_form_location_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_question';
+  $strongarm->value = '0';
+
+  $export['comment_form_location_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_suggestion';
+  $strongarm->value = '0';
+
+  $export['comment_form_location_suggestion'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -160,6 +349,20 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_image';
+  $strongarm->value = '2';
+
+  $export['comment_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_link';
+  $strongarm->value = '2';
+
+  $export['comment_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_idea';
   $strongarm->value = '1';
 
@@ -167,10 +370,38 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_voice';
+  $strongarm->name = 'comment_preview_image';
   $strongarm->value = '1';
 
-  $export['comment_preview_voice'] = $strongarm;
+  $export['comment_preview_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_link';
+  $strongarm->value = '1';
+
+  $export['comment_preview_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_question';
+  $strongarm->value = '1';
+
+  $export['comment_preview_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_suggestion';
+  $strongarm->value = '1';
+
+  $export['comment_preview_suggestion'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_question';
+  $strongarm->value = '2';
+
+  $export['comment_question'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -181,17 +412,98 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_voice';
-  $strongarm->value = '0';
+  $strongarm->name = 'comment_subject_field_image';
+  $strongarm->value = '1';
 
-  $export['comment_subject_field_voice'] = $strongarm;
+  $export['comment_subject_field_image'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_voice';
+  $strongarm->name = 'comment_subject_field_link';
+  $strongarm->value = '1';
+
+  $export['comment_subject_field_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_question';
+  $strongarm->value = '1';
+
+  $export['comment_subject_field_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_suggestion';
+  $strongarm->value = '1';
+
+  $export['comment_subject_field_suggestion'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_suggestion';
   $strongarm->value = '2';
 
-  $export['comment_voice'] = $strongarm;
+  $export['comment_suggestion'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_extra_weights_image';
+  $strongarm->value = array(
+    'title' => '-5',
+    'revision_information' => '0',
+    'author' => '-1',
+    'options' => '1',
+    'comment_settings' => '2',
+    'menu' => '-4',
+    'path' => '3',
+  );
+
+  $export['content_extra_weights_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_extra_weights_link';
+  $strongarm->value = array(
+    'title' => '-5',
+    'revision_information' => '0',
+    'author' => '-1',
+    'options' => '1',
+    'comment_settings' => '2',
+    'menu' => '-4',
+    'path' => '3',
+  );
+
+  $export['content_extra_weights_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_extra_weights_question';
+  $strongarm->value = array(
+    'title' => '-5',
+    'revision_information' => '-1',
+    'author' => '0',
+    'options' => '1',
+    'comment_settings' => '3',
+    'menu' => '-4',
+    'path' => '2',
+  );
+
+  $export['content_extra_weights_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_extra_weights_suggestion';
+  $strongarm->value = array(
+    'title' => '-5',
+    'revision_information' => '-1',
+    'author' => '0',
+    'options' => '1',
+    'comment_settings' => '3',
+    'menu' => '-4',
+    'path' => '2',
+  );
+
+  $export['content_extra_weights_suggestion'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -241,12 +553,39 @@ function hippel_idea_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_voice';
+  $strongarm->name = 'node_options_image';
   $strongarm->value = array(
     0 => 'status',
   );
 
-  $export['node_options_voice'] = $strongarm;
+  $export['node_options_image'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_link';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+
+  $export['node_options_link'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_question';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+
+  $export['node_options_question'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_suggestion';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+
+  $export['node_options_suggestion'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -254,56 +593,5 @@ function hippel_idea_strongarm() {
   $strongarm->value = TRUE;
 
   $export['taxonomy_override_selector'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'viewsdisplaytabs_settings';
-  $strongarm->value = array(
-    'view_enabled' => array(
-      'glossary' => 0,
-      'hippel_idea_ideas_active' => 0,
-      'hippel_idea_ideas_new' => 0,
-      'hippel_idea_ideas_top' => 0,
-      'hippel_idea_voices' => 1,
-    ),
-    'view_displays' => array(
-      'hippel_idea_voices' => array(
-        'block_1' => 'block_1',
-        'block_2' => 'block_2',
-        'block_3' => 'block_3',
-        'block_4' => 'block_4',
-      ),
-    ),
-    'view_displays_default' => array(
-      'glossary' => '',
-      'hippel_idea_ideas_active' => '',
-      'hippel_idea_ideas_new' => '',
-      'hippel_idea_ideas_top' => '',
-      'hippel_idea_voices' => 'block_1',
-    ),
-    'view_show_empty' => array(
-      'glossary' => 0,
-      'hippel_idea_ideas_active' => 0,
-      'hippel_idea_ideas_new' => 0,
-      'hippel_idea_ideas_top' => 0,
-      'hippel_idea_voices' => 1,
-    ),
-    'view_group_separator' => array(
-      'glossary' => '',
-      'hippel_idea_ideas_active' => '',
-      'hippel_idea_ideas_new' => '',
-      'hippel_idea_ideas_top' => '',
-      'hippel_idea_voices' => '',
-    ),
-    'view_throbber' => array(
-      'glossary' => 1,
-      'hippel_idea_ideas_active' => 1,
-      'hippel_idea_ideas_new' => 1,
-      'hippel_idea_ideas_top' => 1,
-      'hippel_idea_voices' => 1,
-    ),
-  );
-
-  $export['viewsdisplaytabs_settings'] = $strongarm;
   return $export;
 }

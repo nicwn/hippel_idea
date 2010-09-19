@@ -4,8 +4,16 @@
   */
 function hippel_idea_form_alter(&$form, $form_state, $form_id) {
   switch ($form_id) {
-    case 'voice_node_form':
-      // print "<pre>"; print_r(array_values($form));print "</pre>";
+    case 'question_node_form':
+      $form['#after_build'][] = 'hippel_idea_after_build';
+      break;
+    case 'suggestion_node_form':
+      $form['#after_build'][] = 'hippel_idea_after_build';
+      break;
+    case 'image_node_form':
+      $form['#after_build'][] = 'hippel_idea_after_build';
+      break;
+    case 'link_node_form':
       $form['#after_build'][] = 'hippel_idea_after_build';
       break;
   }
@@ -30,7 +38,7 @@ function hippel_idea_form_idea_node_form_alter(&$form, $form_state) {
 */
 function hippel_idea_after_build($form, &$form_state) {
    switch ($form['form_id']['#value']) {
-     case 'voice_node_form':
+     case 'question_node_form':
       $node = menu_get_object();
       if (empty($node->field_idea_reference)) {
         $form['field_idea_reference']['nid']['nid']['#value'] = $node->nid;
@@ -38,7 +46,31 @@ function hippel_idea_after_build($form, &$form_state) {
       $form['field_idea_reference']['#access'] = FALSE;
       $form['revision_information']['#access'] = FALSE;
       break;
-    }
+    case 'suggestion_node_form':
+      $node = menu_get_object();
+      if (empty($node->field_idea_reference)) {
+        $form['field_idea_reference']['nid']['nid']['#value'] = $node->nid;
+      } 
+      $form['field_idea_reference']['#access'] = FALSE;
+      $form['revision_information']['#access'] = FALSE;
+      break;
+    case 'image_node_form':
+      $node = menu_get_object();
+      if (empty($node->field_idea_reference)) {
+        $form['field_idea_reference']['nid']['nid']['#value'] = $node->nid;
+      } 
+      $form['field_idea_reference']['#access'] = FALSE;
+      $form['revision_information']['#access'] = FALSE;
+      break;
+    case 'link_node_form':
+      $node = menu_get_object();
+      if (empty($node->field_idea_reference)) {
+        $form['field_idea_reference']['nid']['nid']['#value'] = $node->nid;
+      } 
+      $form['field_idea_reference']['#access'] = FALSE;
+      $form['revision_information']['#access'] = FALSE;
+      break;
+  }
   return $form;
 }
 

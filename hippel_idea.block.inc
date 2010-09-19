@@ -17,8 +17,20 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
         'info' => t('Hippel Idea (Star)'),
         'cache' => BLOCK_NO_CACHE,
       );
-      $blocks['hippel-idea-voice'] = array(
-        'info' => t('Hippel Idea (Your voice)'),
+      $blocks['hippel-idea-question'] = array(
+        'info' => t('Hippel Idea (Question form)'),
+        'cache' => BLOCK_NO_CACHE,
+      );
+      $blocks['hippel-idea-suggestion'] = array(
+        'info' => t('Hippel Idea (Suggestion form)'),
+        'cache' => BLOCK_NO_CACHE,
+      );
+      $blocks['hippel-idea-image'] = array(
+        'info' => t('Hippel Idea (Image form)'),
+        'cache' => BLOCK_NO_CACHE,
+      );
+      $blocks['hippel-idea-link'] = array(
+        'info' => t('Hippel Idea (Link form)'),
         'cache' => BLOCK_NO_CACHE,
       );
       return $blocks;
@@ -36,7 +48,7 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
         return array(
           'subject' => t('<none>'),
           'content' => theme('vud_votes', $node->nid, 'node', 'vote', 'hipfluence'),
-          );
+        );
       }
       if ($delta == 'hippel-idea-flag') {
         return array (
@@ -44,8 +56,17 @@ function hippel_idea_block($op = 'list', $delta = 0, $edit = array()) {
           'content' => flag_create_link('star', $node->nid),
         );
       }
-      if ($delta == 'hippel-idea-voice') {
-        return hippel_idea_get_block('voice', 'Add your voice');
+      if ($delta == 'hippel-idea-question') {
+        return hippel_idea_get_block('question', 'Ask a question');
+      }
+      if ($delta == 'hippel-idea-suggestion') {
+        return hippel_idea_get_block('suggestion', 'Make a suggestion');
+      }
+      if ($delta == 'hippel-idea-image') {
+        return hippel_idea_get_block('image', 'Upload an image');
+      }
+      if ($delta == 'hippel-idea-link') {
+        return hippel_idea_get_block('link', 'Share a link');
       }
       break;
   }

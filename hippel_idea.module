@@ -14,3 +14,4 @@ include_once('hippel_idea.vud.inc');
  */
 include_once('hippel_idea.block.inc');
 include_once('hippel_idea.form.inc');
+
