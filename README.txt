@@ -1,3 +1,5 @@
+HIPPEL IDEA 1.0 alpha 4
+=======================
 ====================================================================== CONTENTS
 TODO
 SUMMARY
@@ -20,6 +22,17 @@ APPENDIX
 * DEPENDENCIES
 
 ========================================================================== TODO
+2010-09-23 - KEIO MEETING
+In preparation for closed beta, aim to complete these in 2 weeks:
+
+- release hippel_idea in beta
+- release hippel_steps in beta
+- release hippel_blog in beta (used only by site operators)
+- release hippel_activities in beta
+- close beta go live at http://openhippel.org 
+- new wireframes / web design - breadcrumbs, submit an idea from anywhere
+- write docs & tutorials, starting with hippel_idea
+
 ----------------------------------------------------------- Hippel Idea feature
 - Check the installation of the Hippel Idea feature.
   * Use hooks instead of queries to insert flag and taxonomy terms.
