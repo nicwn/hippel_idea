@@ -14,46 +14,6 @@ function hippel_idea_user_default_permissions() {
     ),
   );
 
-  // Exported permission: create image content
-  $permissions['create image content'] = array(
-    'name' => 'create image content',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
-  );
-
-  // Exported permission: create link content
-  $permissions['create link content'] = array(
-    'name' => 'create link content',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
-  );
-
-  // Exported permission: create question content
-  $permissions['create question content'] = array(
-    'name' => 'create question content',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
-  );
-
-  // Exported permission: create suggestion content
-  $permissions['create suggestion content'] = array(
-    'name' => 'create suggestion content',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
-  );
-
-  // Exported permission: create voice content
-  $permissions['create voice content'] = array(
-    'name' => 'create voice content',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
-  );
-
   // Exported permission: edit own idea content
   $permissions['edit own idea content'] = array(
     'name' => 'edit own idea content',
@@ -62,20 +22,10 @@ function hippel_idea_user_default_permissions() {
     ),
   );
 
-  // Exported permission: use gravatar
-  $permissions['use gravatar'] = array(
-    'name' => 'use gravatar',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
-  );
-
-  // Exported permission: use share this
-  $permissions['use share this'] = array(
-    'name' => 'use share this',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
+  // Exported permission: see vote up/down node stats
+  $permissions['see vote up/down node stats'] = array(
+    'name' => 'see vote up/down node stats',
+    'roles' => array(),
   );
 
   // Exported permission: use vote up/down
