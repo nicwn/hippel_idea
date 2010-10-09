@@ -118,7 +118,7 @@ function hippel_idea_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_idea_pattern';
-  $strongarm->value = 'ideas/by/[author-name-raw]/[title-raw]';
+  $strongarm->value = 'idea/[author-name-raw]/[title-raw]';
 
   $export['pathauto_node_idea_pattern'] = $strongarm;
   $strongarm = new stdClass;
